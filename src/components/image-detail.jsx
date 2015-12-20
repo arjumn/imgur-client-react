@@ -20,7 +20,7 @@ module.exports = React.createClass({
   },
 
   render: function(){
-    return <div>
+    return <div className="image-detail">
       {this.state.image ? this.renderContent() : null}
     </div>
   },
@@ -52,7 +52,7 @@ module.exports = React.createClass({
       </video>
     }
     else {
-      return <img scr={this.state.image.link} />
+      return <img src={this.state.image.link} />
     }
   },
 
