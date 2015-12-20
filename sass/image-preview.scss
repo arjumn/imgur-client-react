@@ -1,9 +1,14 @@
 .image-preview {
   display: inline-block;
   cursor: pointer;
-  
-  img {
+
+  img, video {
     width: 200px;
     height: 200px;
+  }
+
+  video {
+    vertical-align: middle;
+    background-color: black;
   }
 }
