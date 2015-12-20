@@ -2,10 +2,11 @@ var React = require('react');
 var Reflux = require('reflux');
 var Api = require('../utils/api');
 var TopicStore = require('../stores/topic-store');
+var Actions = require('../actions');
 
 module.exports = React.createClass({
   mixins: [
-    Reflux.listenTo(TopicStore, 'change')
+    Reflux.listenTo(TopicStore, 'onChange')
   ],
 
   getInitialState: function(){
@@ -15,7 +16,7 @@ module.exports = React.createClass({
   },
 
   componentWillMount: function(){
-    TopicStore.getTopics();
+    Actions.getTopics();
   },
 
   render: function() {
