@@ -2,7 +2,7 @@ var Reflux = require('reflux');
 var Api = require('../utils/api');
 var Actions = require('../actions');
 
-module.export = Reflux.createStore({
+module.exports = Reflux.createStore({
   listenables: [ Actions ],
 
   getImage: function(id){
