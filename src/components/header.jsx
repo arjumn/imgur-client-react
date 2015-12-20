@@ -43,7 +43,11 @@ module.exports = React.createClass({
   renderItems: function(){
     return this.state.topics.slice(0,4).map(function(topic){
       return <li key={topic.id}>
-        <Link to={"topic/" + topic.id}>{topic.name}</Link>
+        <Link
+          activeClassName="active"
+          to={"topic/" + topic.id}>
+          {topic.name}
+        </Link>
       </li>
     });
   }
