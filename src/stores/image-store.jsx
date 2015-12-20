@@ -15,6 +15,19 @@ module.exports = Reflux.createStore({
       }.bind(this));
   },
 
+  getImage: function(id){
+    Api.get('gallery/image/' + id)
+      .then(function(json){
+        if(this.images){
+          this.images.push(json.data);
+        }
+        else {
+          this.images = [json.data];
+        }
+        this.triggerChange();
+      }.bind(this));
+  },
+
   find: function(id){
     var image = _.findWhere(this.images, {id:id});
 
