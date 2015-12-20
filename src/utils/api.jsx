@@ -8,6 +8,9 @@ module.exports = {
       header: {
         'Authorization': 'Client-ID ' + apiKey
       }
-    });
+    })
+    .then(function(response){
+      return response.json();
+    })
   }
 }
