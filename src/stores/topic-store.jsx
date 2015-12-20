@@ -6,6 +6,7 @@ module.exports = React.createStore({
     return Api.get('topics/defaults')
       .then(function(json){
         this.topics = json.data;
+        this.trigger('change', this.topics);
       }.bind(this));
   }
 });
