@@ -56,8 +56,9 @@ gulp.task('build', function() {
 });
 
 gulp.task('serve', function(done) {
-  gulp.src('')
+  gulp.src('Imgur_client')
     .pipe(server({
+      port: 8888,
       livereload: {
         enable: true,
         filter: function(filePath, cb) {
